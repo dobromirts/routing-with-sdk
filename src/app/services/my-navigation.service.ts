@@ -4,17 +4,10 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { NavigationService } from '@infragistics/appbuilder-sdk';
 
-/**
- * Hopefully, a soon-to-be central point for managing
- * routing/navigation state in the application.
- *
- * @export
- * @class NavigationService
- */
 @Injectable({
     providedIn: 'root',
 })
-export class MyNavigationService extends NavigationService implements OnDestroy  {
+export class MyNavigationService extends NavigationService implements OnDestroy {
     constructor(router: Router) {
         super(router);
     }
@@ -35,4 +28,10 @@ export class MyNavigationService extends NavigationService implements OnDestroy 
     public override getPreviewUrl(applicationId: string, viewId = '') {
         return `${window.location.origin}/app-builder/app/${applicationId}/preview${viewId ? `/${viewId}` : ''}`;
     }
+
+    //navigates (in preview mode) to a target viewId,
+    public override navigateTargetView(applicationId: string, targetViewId: string, viewQueryParams: any = {}) {
+        this.router.navigate(['app-builder/app', applicationId, 'preview', targetViewId], { queryParams: viewQueryParams });
+    }
+
 }

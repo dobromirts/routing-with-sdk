@@ -9,7 +9,10 @@ import { HomeComponent } from './home-component/home.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'app-builder', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'app-builder', component: AppBuilderComponent1, children: workspaceRoutes() },  // Workspace routes from SDK
+  {
+    path: 'app-builder', component: AppBuilderComponent1,
+    children: [...workspaceRoutes(), ...styleguideRoutes(), ...surveyRoutes(), ...welcomeRoutes(), ...openIdConnectRoutes(), ...gitHubRoutes(), ...creationRoutes(), ...devToolsRoutes()]
+  },  // Workspace routes from SDK
   { path: 'error', component: UncaughtErrorComponent },  // Main app error handling route
   { path: '**', component: PageNotFoundComponent }       // Catch-all 404 route for main app
 ];
