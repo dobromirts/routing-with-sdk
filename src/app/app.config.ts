@@ -21,7 +21,7 @@ class WebpackTranslateLoader implements TranslateLoader {
 // { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }
 
 const providers: Provider = [
-  provideRouter(routes, withDebugTracing()),
+  provideRouter(routes),
   importProvidersFrom(BrowserModule, HammerModule),
   provideAnimations(),
   { provide: NavigationService, useClass: MyNavigationService },
