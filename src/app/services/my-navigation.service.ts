@@ -12,26 +12,25 @@ export class MyNavigationService extends NavigationService implements OnDestroy 
         super(router);
     }
 
-    public override getDesignNavigation(applicationId: string) {
-        return ['/app-builder/app', applicationId];
-    }
+    // public override getDesignNavigation(applicationId: string) {
+    //     return ['/app-builder/app', applicationId];
+    // }
 
 
-    public override navigateToDesign(applicationId: string, replaceUrl = false) {
-        this.router.navigate(this.getDesignNavigation(applicationId), { replaceUrl });
-    }
+    // public override navigateToDesign(applicationId: string, replaceUrl = false) {
+    //     this.router.navigate(this.getDesignNavigation(applicationId), { replaceUrl });
+    // }
 
-    public override getPreviewNavigation(applicationId: string, viewId = '') {
-        return ['/app-builder/app', applicationId, 'preview', viewId];
-    }
+    // public override getPreviewNavigation(applicationId: string, viewId = '') {
+    //     return ['/app-builder/app', applicationId, 'preview', viewId];
+    // }
 
-    public override getPreviewUrl(applicationId: string, viewId = '') {
-        return `${window.location.origin}/app-builder/app/${applicationId}/preview${viewId ? `/${viewId}` : ''}`;
-    }
+    // public override getPreviewUrl(applicationId: string, viewId = '') {
+    //     return `${window.location.origin}/app-builder/app/${applicationId}/preview${viewId ? `/${viewId}` : ''}`;
+    // }
 
-    //navigates (in preview mode) to a target viewId,
-    public override navigateTargetView(applicationId: string, targetViewId: string, viewQueryParams: any = {}) {
-        this.router.navigate(['app-builder/app', applicationId, 'preview', targetViewId], { queryParams: viewQueryParams });
-    }
-
+    // //navigates (in preview mode) to a target viewId,
+    // public override navigateTargetView(applicationId: string, targetViewId: string, viewQueryParams: any = {}) {
+    //     this.router.navigate(['app-builder/app', applicationId, 'preview', targetViewId], { queryParams: viewQueryParams });
+    // }
 }

@@ -4,6 +4,7 @@ setAppBuilderConfig({
     hideSharingOptions: true,
     personalWorkspaceLabel: 'myExperiences',
     baseUrl: 'https://localhost:7092/',                                 // Your AppBuilder ON-PREM/SDK backend server url
+    baseRoute: '/app-builder',
     skipAuth: true,
     disableCodegen: true,
     disableAnalytics: true,
